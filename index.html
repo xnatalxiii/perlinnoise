@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=640px, initial-scale=1.0" />
+
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png" />
+		<link rel="manifest" href="resources/favicons/site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="vendors/css/grid.css" />
+		<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Crimson+Pro&display=swap" rel="stylesheet" />
+
+		<title>Perlin Noise</title>
+	</head>
+	<body>
+		<main>
+			<div class="row-max">
+				<h1 class="main-title">Perlin Noise</h1>
+				<p class="main-p">
+					The Perlin noise is a procedural texture, a type of gradient noise used in visual effects to increase the appearance of
+					realism in computer graphics. The function has a pseudo-random appearance, yet all of its visual details follow a
+					related harmony.
+				</p>
+
+				<div class="params">
+					<div class="col-33">
+						<div class="param-container">
+							<label for="canvas-size">Canvas size</label>
+
+							<select id="canvas-size" value="600">
+								<option value="600">600 x 350</option>
+								<option value="800">800 x 400</option>
+								<option value="1000">1000 x 600</option>
+							</select>
+						</div>
+						<div class="param-container">
+							<label for="bground-color">Background</label>
+							<input type="color" id="bground-color" name="bground-color" value="#666666" />
+						</div>
+						<div class="param-container">
+							<p id="frame-rate"></p>
+						</div>
+					</div>
+
+					<div class="col-33">
+						<div class="param-container">
+							<label for="particles">Particles<span class="particles-value"></span></label>
+							<input type="range" id="particles" name="particles" min="50" value="1500" max="5000" />
+						</div>
+						<div class="param-container">
+							<label for="noise">Noise<span class="noise-value"></span></label>
+							<input type="range" id="noise" name="noise" min="150" value="250" max="400" />
+						</div>
+						<div class="param-container">
+							<label for="noise">Noise Alpha<span class="noise-alpha-value"></span></label>
+							<input type="range" id="noise-alpha" name="noise-alpha" min="2" value="10" max="50" />
+						</div>
+					</div>
+
+					<div class="col-33">
+						<div class="param-container radio-buttons">
+							<label>Noise color</label>
+							<br />
+							<input type="radio" id="noise-color-black" name="noise-color" value="black" />
+							<label for="noise-color-black">Black</label><br />
+							<input type="radio" id="noise-color-white" name="noise-color" value="white" />
+							<label for="noise-color-white">White</label><br />
+							<input type="radio" id="noise-color-rainbow" name="noise-color" value="rainbow" checked />
+							<label for="noise-color-rainbow">Rainbow</label>
+						</div>
+						<button class="btn" onclick="saveCanvas('perlinNoise', 'jpg');">Save Img</button>
+					</div>
+				</div>
+				<div id="canvas-holder">
+					<!-- Our canvas will go here! -->
+				</div>
+				<p class="fps-tip">*Try refreshing the page if the FPS drop after playing with the parameters.</p>
+			</div>
+		</main>
+
+		<footer>
+			<p>This project was based in "The Coding Train - Perlin Noise algorithm"</p>
+			<p class="cright">BryanRodríguez © 2020</p>
+		</footer>
+
+		<!-- Scripts -->
+		<script language="javascript" type="text/javascript" src="./vendors/js/p5.js"></script>
+		<script language="javascript" type="text/javascript" src="./resources/js/particle.js"></script>
+		<script language="javascript" type="text/javascript" src="./resources/js/sketch.js"></script>
+		<script language="javascript" type="text/javascript" src="./resources/js/script.js"></script>
+	</body>
+</html>

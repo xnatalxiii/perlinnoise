@@ -1,0 +1,190 @@
+/*-------------------------------------------------
+
+	- Proyect: Perlin Noise
+	- Date: Feb 2020
+	- Author: Bryan Rodríguez (Based in "The code train p5js Perlin Noise Project"
+
+-------------------------------------------------*/
+
+/*-------------------------------------------------
+
+                - General Setup -
+
+-------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: white;
+	color: #333;
+	font-family: "Crimson Pro", serif;
+	font-size: 62.5%;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+	letter-spacing: 0.1rem;
+	min-width: 630px;
+	max-width: 2000px;
+	margin: 0 auto;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	content: ".";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/*-------------------------------------------------
+
+                - Reusables -
+
+-------------------------------------------------*/
+
+.row-max {
+	max-width: 1140px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.col-33 {
+	display: inline-block;
+	width: 30%;
+	margin: 0 auto;
+	vertical-align: top;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+/* - Buttons - */
+.btn,
+.btn:link,
+.btn:visited {
+	display: block;
+	padding: 0.7rem 1.7rem;
+	border-radius: 0.3rem;
+	backface-visibility: hidden;
+	cursor: pointer;
+	transition: all 0.2s;
+	font-size: 1.7rem;
+	margin-left: 2rem;
+	font-weight: 400;
+	background-color: rgb(255, 255, 255);
+	outline: none;
+	box-shadow: none;
+}
+
+.btn:focus,
+#bground-color:focus,
+#canvas-size:focus {
+	/* border: none; */
+	outline: none;
+}
+
+.btn:hover,
+.btn:active,
+#bground-color:hover,
+#bground-color:active {
+	background-color: rgb(185, 185, 185);
+}
+
+#bground-color,
+#canvas-size {
+	margin-top: 0.3rem;
+	border: 2px solid rgb(240, 240, 240);
+	border-bottom: 2px solid #999;
+	border-right: 2px solid #999;
+	cursor: pointer;
+}
+
+input,
+select {
+	width: 100%;
+}
+
+input[type="radio"] {
+	width: auto;
+}
+/*-------------------------------------------------
+
+                - Main -
+
+-------------------------------------------------*/
+
+main {
+	min-height: 85vh;
+}
+
+.main-title {
+	font-size: 2.4rem;
+	margin: 1rem 0;
+	padding: 1rem 0;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+.main-p {
+	margin: 1rem 15%;
+	font-size: 1.8rem;
+	text-align: justify;
+}
+
+#canvas-holder {
+	margin: 4rem 0 2rem 0;
+}
+
+#frame-rate {
+	font-size: 1.8rem;
+	text-align: left;
+}
+
+.params {
+	max-width: 750px;
+	margin: 4rem auto;
+}
+.param-container {
+	margin: 1rem;
+	font-size: 1.8rem;
+	text-align: left;
+	padding-left: 2rem;
+}
+
+.param-container label {
+	display: block;
+}
+
+.param-container.radio-buttons label {
+	display: inline;
+}
+
+.fps-tip {
+	font-size: 1.5rem;
+}
+
+footer {
+	min-height: 10vh;
+	color: #333;
+	font-size: 1.4rem;
+	text-align: center;
+	padding-top: 3rem;
+
+	margin-top: 10rem;
+}
+
+.cright {
+	margin-top: 1rem;
+	text-align: center;
+}
